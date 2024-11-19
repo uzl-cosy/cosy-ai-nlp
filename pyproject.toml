@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "laboratorium-ai-nlp"
+version = "1.0.1"
+description = ""
+authors = ["Mathias Eulers <m.eulers@uni-luebeck.de>", "Finn Stoldt <f.stoldt@uni-luebeck.de>"]
+readme = "README.md"
+package-mode = true
+packages = [{include = "laboratorium_ai_nlp"}]
+include = [
+    { path = "laboratorium_ai_nlp/data/word_frequency_list_COSY.csv", format = ["sdist", "wheel"] }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.26.4"
+pandas = "^2.2.1"
+fuzzywuzzy = "^0.18.0"
+nltk = "^3.8.1"
+spacy = "^3.7.4"
+de-core-news-lg = {url = "https://github.com/explosion/spacy-models/releases/download/de_core_news_lg-3.7.0/de_core_news_lg-3.7.0-py3-none-any.whl"}
+
+[tool.poetry.scripts]
+main = "laboratorium_ai_nlp.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
